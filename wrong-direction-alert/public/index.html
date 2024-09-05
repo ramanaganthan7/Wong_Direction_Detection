@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DriveSentry</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Drive Sentry</h1>
+  </header>
+
+  <div class="container">
+    <div class="input-section">
+      <div class="input-box">
+        <label for="from">From:</label>
+        <input type="text" id="from" placeholder="Enter starting point">
+        <button id="current-location">Use Current Location</button>
+      </div>
+      <div class="input-box">
+        <label for="to">To:</label>
+        <input type="text" id="to" placeholder="Enter destination">
+        <button id="get-route">Get Route</button>
+      </div>
+    </div>
+
+    <div class="journey-status">
+      <h2>Journey Status</h2>
+      <p>Total Distance: <span id="total-distance">0 km</span></p>
+      <p>Distance Left: <span id="distance-left">0 km</span></p>
+      <img id="status-svg" src="static.svg" alt="Status" width="100">
+    </div>
+
+    <div class="map-section">
+      <div id="map"></div>
+    </div>
+  </div>
+
+  <audio id="static-sound" src="static.mp3"></audio>
+  <audio id="moving-sound" src="moving.mp3"></audio>
+  <audio id="wrong-sound" src="wrong.mp3"></audio>
+
+  <script src="main.js"></script>
+  <!-- Google Maps API with Places & Geolocation -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJwTY8d_Ik5f6ukhQd4gAUrp1PyOulVc0&libraries=places&callback=initMap" async defer></script>
+</body>
+</html>
